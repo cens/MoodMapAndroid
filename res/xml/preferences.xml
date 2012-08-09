@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android" 
+  android:title="@string/settings_label">
+  
+  <PreferenceCategory android:title="Notifications"></PreferenceCategory>
+  <ListPreference 
+            android:key="pref_notification_schedule"
+            android:title="Notifications"
+            android:summary="Notification options"
+            android:entries="@array/notificationTypeArray"
+            android:entryValues="@array/notificationTypeValues"
+            android:defaultValue="0"
+            />
+  
+  <TimePickerPreference android:key="pref_alarm_time_str" android:title="Set Notification Time"></TimePickerPreference>
+
+  <PreferenceCategory android:title="Study Group" android:summary="@string/group_help"></PreferenceCategory>
+  	<EditTextPreference android:key="StudyID" android:title="@string/group_id" android:summary="@string/group_help"></EditTextPreference>
+  	<EditTextPreference android:key="participantID" android:title="@string/participant_id" android:summary="@string/group_help"></EditTextPreference>
+  
+    
+</PreferenceScreen>

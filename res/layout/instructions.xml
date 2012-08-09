@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#000000" >
+	<ImageView android:src="@drawable/how_to_moodmap"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_centerInParent="true" 
+		android:id="@+id/image" />
+
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/tv_email_instructions"
+		android:text="@string/feedback" android:layout_centerHorizontal="true"
+		android:textColor="#3bb9ff" android:layout_below="@id/image" />
+     <ImageView android:src="@drawable/info"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:id="@+id/iv_info_instructions"
+			android:layout_alignParentBottom="true" android:paddingBottom="10dip"
+			android:paddingLeft="10dip" android:paddingTop="10dip"
+			android:paddingRight="10dip" />
+	
+		
+</RelativeLayout>

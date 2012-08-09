@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+
+
+
+	<ImageView android:id="@+id/imgView" android:src="@drawable/terms"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"></ImageView>
+
+	<ScrollView android:layout_width="fill_parent" android:id="@+id/scroll"
+		android:layout_height="wrap_content" android:layout_below="@id/imgView"
+		android:layout_above="@+id/btnIAgree">
+
+		<TextView android:text="@string/terms" android:id="@+id/TextView01"
+			android:layout_marginTop="5dip" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_below="@id/imgView"
+			android:textSize="16dip" android:textColor="#FFF"
+			android:layout_marginBottom="50dip" android:autoLink="email">
+		</TextView>
+
+	</ScrollView>
+
+
+	<ImageButton android:id="@id/btnIAgree"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true" android:src="@drawable/iagree"
+		android:layout_centerHorizontal="true" android:background="@null"
+		android:layout_marginBottom="5dip" />
+
+
+</RelativeLayout>

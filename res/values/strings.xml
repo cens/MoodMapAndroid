@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SplashScreenActivity!</string>
+    <string name="app_name">Mood Map</string>
+    <string name="feedback"><u>feedback@mymoodmapping.org</u></string>
+    <string name="location_label">Choose location:</string>
+    <string name="settings_label">Settings</string>
+    <string name="trends_label">Trends</string>
+    <string name="mood_trends">Mood Trends</string>
+    <string name="save_label">Save</string>
+    <string name="study_group">Study Group</string>
+    <string name="group_id">Group ID</string>
+    <string name="participant_id">Participant ID</string>
+    <string name="group_help">Leave the Study Group boxes blank unless you are participating in a study.</string>
+	<string name="location_home">Home location</string>
+	<string name="location_work">Work location</string>
+	<string name="location_other">Other location</string>
+	<string name="location_on_the_go">On the Go location</string>
+	<string name="help_button">Help button</string>
+	<string name="terms_v1">This application is for your insights and entertainment, and to facilitate our ongoing research on how emotions relate to factors such as time, place and current events. We will also be reviewing feedback on this interface and visualization of mood trends.\n\nTo participate in the Mood Map project, please follow the instructions that follow the installation. Essentially we ask that you map your mood as prompted, throughout the day, for one month.  You can also open the app to map your mood at any time. The app will expire thirty days after installation. Along with your mood, you are asked to select one of several location categories.\n\nYou are not obligated to participate and can discontinue at any time. You can respond to as many or as few of the Mood Mapping prompts as you like.\n\nThe Mood Map is not a clinical or diagnostic tool.\n\nThere is no monitoring or response to the Mood Map entries of individuals, and this application should therefore not be used as a “call for help.”\n\nTo protect your identity, your device ID is encrypted and all data you enter on the application is de-identified.\n\nYour identity will be protected and will be unknown even to the developers, who will analyze anonymous group data but not the responses of individuals.\n\nThe analysis of anonymous group data may be published or publically presented.\n\nDeviations from the intended use are not available at this time; however we welcome your feedback and inquiries: feedback@mymoodmapping.org.\n\nClick to begin only if you have read and understood, and agree to these terms and conditions.</string>
+	<string name="terms">The Mood Map application is for your insights and entertainment, and to support research on emotion.\n\nIt allows you to \'emotionally check in\' throughout the day, and see how your moods vary over time and in different places. Assessing your mood frequently may help you understand your emotional patterns.\n\nThe app asks you to map your mood and location. You will be asked to indicate or verify your location from several categories (work, home, on the go, and other).\n\nYou can adjust the frequency of prompting in Mood Map app\'s settings. You can also open the app to map your mood at any time. If you turn the notifications off in the app settings, you must actively switch them back on to resume prompting.\n\nPlease note that the Mood Map is not a clinical or diagnostic tool. There is no monitoring or response to the Mood Map entries of individuals, and this application should therefore not be used as a \"call for help\".\n\n You can respond to as many or as few of the Mood Mapping prompts as you like and can discontinue at any time.\n\nTo protect your identity, your device ID is encrypted and all data you enter on the application is de-identified.  Your identity will be protected and will be unknown even to the developers, who will analyze anonymous group data but not the responses of individuals. The analysis of anonymous group data may be published or publicly presented.\n\nDeviations from the intended use are not available at this time; however we welcome your feedback and inquiries: feedback@mymoodmapping.org \nClick to \"I agree\" only if you have read and understood, and agree to these terms and conditions.</string>
+</resources>

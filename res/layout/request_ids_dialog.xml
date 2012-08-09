@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:id="@+id/root" android:padding="10dp" android:orientation="vertical"
+	android:background="#000" android:gravity="center">
+	
+	<TextView android:id="@+id/statement" android:text= "Please leave ID boxes blank unless you are participating in a study"  android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="center_horizontal"  android:layout_marginBottom="4dip"/>
+	
+	<ImageView android:id="@+id/imgHeading" android:src= "@drawable/enter_study_id"  android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:gravity="center_horizontal"/>
+	
+	
+	<EditText android:id="@+id/et_input_group_id"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:hint="Enter Study ID"  android:inputType="number" >
+	</EditText>
+
+	<TableLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:gravity="center_horizontal"
+		android:layout_marginTop="10dip"
+		>
+		<TableRow>
+			<Button android:id="@+id/button_cancel_group_id"
+				android:layout_width="110dp" android:layout_height="43dp"
+				android:background="@drawable/skip">
+			</Button>
+			<Button android:id="@+id/button_continue_group_id"
+				android:layout_width="110dp" android:layout_height="43dp"
+				android:background="@drawable/submit" android:layout_marginLeft="10dip">
+			</Button>
+		</TableRow>
+	</TableLayout>
+	
+</LinearLayout>

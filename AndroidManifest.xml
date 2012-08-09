@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.moodmap" android:versionCode="2" android:versionName="2.0">
+    <uses-permission android:name="android.permission.DEVICE_POWER"></uses-permission>
+
+	<application android:label="@string/app_name" android:icon="@drawable/icon" android:debuggable="true">
+
+		/** Splash screen */
+		<activity android:name=".SplashScreenActivity" android:label="@string/app_name"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		/** Mood entering activity*/
+		<activity android:name=".HomeActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+		/** Mood showing activity*/
+		<activity android:name=".TrendsActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		/** Question sheet after five points on same location*/
+		<activity android:name=".IAmAtActivity"
+			android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent" />
+
+		/**Activity shows instruction about entering mood*/
+		<activity android:name=".StartMoodMapping"
+			android:screenOrientation="portrait" 
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+		/**Activity shows instruction about entering mood*/
+		<activity android:name="Instructions"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+		/**Activity shows Reminder after one Hour about entering mood*/
+		<activity android:name=".ReminderActivity" android:theme="@android:style/Theme.Dialog"
+			android:screenOrientation="portrait" android:alwaysRetainTaskState="false" android:noHistory="true" android:launchMode="singleInstance"/>
+
+		/**Activity shows Terms of using the application*/
+		<activity android:name=".Terms_Activity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+			
+			<receiver android:name=".AlarmReceiver"/>
+		
+			
+		<receiver android:name=".MyBroadcastReceiver">
+			<intent-filter>
+				<action android:name="android.intent.action.SCREEN_ON"></action>
+			</intent-filter>
+		</receiver>
+		<activity android:name="MoodMapPreference" android:label="@string/settings_label"></activity>
+			
+	
+		
+		
+	</application>
+	<uses-sdk android:minSdkVersion="3" />
+	
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_GPS" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-feature android:name="android.hardware.location" />
+	<uses-feature android:name="android.hardware.location.gps" />
+	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	
+
+</manifest> 

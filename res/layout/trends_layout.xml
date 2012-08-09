@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000" >
+
+    <RelativeLayout 
+        android:id="@+id/headingRelativeLayout" 
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent" 
+        android:layout_alignParentTop="true" 
+        android:layout_alignParentLeft="false">
+		<Button   android:id="@+id/backButton" android:layout_height="wrap_content"  android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:text="@string/app_name"></Button>
+		<TextView android:id="@+id/titleTextView" android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:textStyle="bold" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:text="@string/mood_trends"></TextView>
+	</RelativeLayout>
+	
+   	<RelativeLayout 
+   	    android:id="@+id/stcTrendsLayout"
+   	    android:layout_height="wrap_content"
+   	    android:layout_width="wrap_content" 
+		android:orientation="vertical"
+		android:background="#000000" 
+		android:layout_below="@+id/headingRelativeLayout" 
+		android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipChildren="true"
+            android:orientation="vertical">
+
+            <com.ui.TrendCustumView
+                android:id="@+id/animatedCustomView"
+                android:layout_width="300dip"
+                android:layout_height="300dip" android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+	</RelativeLayout>
+
+   	<RelativeLayout
+   	    android:id="@+id/locationRelativeLayout"
+   	    android:layout_width="wrap_content"
+   	    android:layout_height="56dp"
+   	    android:background="#FF000000" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+
+   	    <ImageButton
+   	        android:id="@+id/workImageButton"
+   	        android:layout_width="80dp"
+   	        android:layout_height="54dp"
+   	        android:layout_alignParentLeft="true"
+   	        android:layout_centerVertical="true"
+   	        android:background="#FF000000"
+   	        android:contentDescription="@string/location_work"
+   	        android:padding="0dp"
+   	        android:scaleType="fitXY"
+   	        android:src="@drawable/work4_2x" />
+
+   	    <ImageButton
+   	        android:id="@+id/homeImageButton"
+   	        android:layout_width="80dp"
+   	        android:layout_height="54dp"
+   	        android:layout_centerVertical="true"
+   	        android:layout_toRightOf="@+id/workImageButton"
+   	        android:background="#FF000000"
+   	        android:contentDescription="@string/location_home"
+   	        android:padding="0dp"
+   	        android:scaleType="fitXY"
+   	        android:src="@drawable/home4_2x" />
+
+   	    <ImageButton
+   	        android:id="@+id/onGoImageButton"
+   	        android:layout_width="80dp"
+   	        android:layout_height="54dp"
+   	        android:layout_centerVertical="true"
+   	        android:layout_toRightOf="@+id/homeImageButton"
+   	        android:background="#FF000000"
+   	        android:contentDescription="@string/location_on_the_go"
+   	        android:padding="0dp"
+   	        android:scaleType="fitXY"
+   	        android:src="@drawable/onthego4_2x" />
+
+   	    <ImageButton
+   	        android:id="@+id/otherImageButton"
+   	        android:layout_width="80dp"
+   	        android:layout_height="54dp"
+   	        android:layout_centerVertical="true"
+   	        android:layout_toRightOf="@+id/onGoImageButton"
+   	        android:background="#FF000000"
+   	        android:contentDescription="@string/location_on_the_go"
+   	        android:padding="0dp"
+   	        android:scaleType="fitXY"
+   	        android:src="@drawable/others4_2x" />
+   	</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46dip">
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/playPauseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/stcTrendsLayout"
+        android:layout_below="@+id/stcTrendsLayout"
+        android:background="@drawable/pause1" android:layout_marginTop="-38dp"/>
+   	
+</RelativeLayout>

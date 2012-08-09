@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+ 	android:background="@drawable/black_transparent"
+	android:visibility="visible" android:orientation="horizontal">
+	
+	
+	<TextView android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/tvText"
+		android:text="I am at"
+		android:textSize="20dip"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="150dip"
+		android:textColor="#FFF"
+		 />
+	
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/ll_i_am_at" android:visibility="visible"
+		android:orientation="horizontal" android:layout_below="@id/tvText">
+
+		<ImageView android:id="@+id/imageWork" android:src="@drawable/work_active_click"
+			android:layout_width="75dp" android:layout_height="wrap_content"
+			android:layout_alignParentTop="true" 
+			android:layout_alignParentLeft="true" />
+
+		<ImageView android:id="@+id/imageHome" android:src="@drawable/home_active_click"
+			android:layout_width="75dp" android:layout_height="wrap_content"
+			android:layout_alignParentTop="true" 
+			android:layout_toRightOf="@+id/imageWork" />
+
+		<ImageView android:id="@+id/imageOnTheGo" android:src="@drawable/onthego_active_click"
+			android:layout_width="75dp" android:layout_height="wrap_content"
+			android:layout_alignParentTop="true" 
+			android:layout_toRightOf="@+id/imageHome" />
+
+		<ImageView android:id="@+id/imageOther" android:src="@drawable/others_active_click"
+			android:layout_width="75dp" android:layout_height="wrap_content"
+			android:layout_alignParentTop="true" 
+			android:layout_toRightOf="@+id/imageOnTheGo" />
+
+	</RelativeLayout>
+</RelativeLayout>
+	

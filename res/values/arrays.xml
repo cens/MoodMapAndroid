@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notificationTypeArray">
+        <item name="hourly">Hourly</item>
+        <item name="3day">Three times a day</item>
+        <item name="daily_at">Once a day at ...</item>
+        <item name="rand_daily">Once a day at random times</item>
+        <item name="never">No Notifications</item>
+    </string-array>
+    
+    <string-array name="notificationTypeValues">
+        <item name="hourly">"0"</item>
+        <item name="3day">"1"</item>
+        <item name="daily_at">"2"</item>
+        <item name="rand_daily">"3"</item>
+        <item name="never">"4"</item>
+    </string-array>
+</resources>
