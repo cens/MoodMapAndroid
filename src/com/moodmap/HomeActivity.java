@@ -16,37 +16,20 @@
 
 package com.moodmap;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Timer;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
-
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.preference.PreferenceManager;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -63,7 +46,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mood.database.DBAdapter;
 import com.mood.database.MoodModel;
@@ -71,11 +53,20 @@ import com.mood.database.MoodRepository;
 import com.mood.models.Mood;
 import com.ui.MoodEntryCustumView;
 
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.location.LocationProvider;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Timer;
 
 public class HomeActivity extends Activity implements
         SharedPreferences.OnSharedPreferenceChangeListener
@@ -104,8 +95,8 @@ public class HomeActivity extends Activity implements
     boolean isAmAtDisplay = false;
     String strIAmAt = "Unknown";
     String strColorName = "";
-    private int kLocationSelectedColor = 0xFF111111;
-    private int kLocationNotSelectedColor = 0xFF333333;
+    private final int kLocationSelectedColor = 0xFF111111;
+    private final int kLocationNotSelectedColor = 0xFF333333;
     private ImageButton myLocButtonWork; // Location on main screen - STC
                                          // 10/17/11
     private ImageButton myLocButtonHome;
@@ -162,6 +153,8 @@ public class HomeActivity extends Activity implements
         studyID = spIDs.getString("StudyID", "");
         participantID = spIDs.getString("participantID", "");
         deviceID = spIDs.getString("DeviceID", "");
+
+        mMoodMapProbeWriter = new MoodMapProbeWriter(this);
 
         // just onResume 1/2/12 registerLocationListeners();
     }
@@ -223,6 +216,9 @@ public class HomeActivity extends Activity implements
         {
             t.cancel(); // TODO Auto-generated method stub
         }
+
+        if (mMoodMapProbeWriter != null)
+            mMoodMapProbeWriter.close();
         super.onDestroy();
     }
 
@@ -953,6 +949,7 @@ public class HomeActivity extends Activity implements
 
         }// HomeActivity.this.finish();
     };
+    private MoodMapProbeWriter mMoodMapProbeWriter;
 
     class RefreshHandler extends Handler {
 
@@ -1071,6 +1068,16 @@ public class HomeActivity extends Activity implements
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    /**
+     * Sends data to ohmage
+     */
+    protected void sendDataToOhmage() {
+        if (moodFirst.isCreated)
+            mMoodMapProbeWriter.writeResponse(getLocationTypeFromString(strIAmAt), moodFirst);
+        if (moodSecond.isCreated)
+            mMoodMapProbeWriter.writeResponse(getLocationTypeFromString(strIAmAt), moodSecond);
     }
 
     /**
@@ -1215,6 +1222,7 @@ public class HomeActivity extends Activity implements
 
         @Override
         protected Void doInBackground(Void... params) {
+            sendDataToOhmage();
             Uploaddata();
             return null;
         }
