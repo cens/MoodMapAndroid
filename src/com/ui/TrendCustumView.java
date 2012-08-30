@@ -391,7 +391,8 @@ public class TrendCustumView extends SurfaceView implements SurfaceHolder.Callba
                 try {
                     c = _surfaceHolder.lockCanvas(null);
                     synchronized (_surfaceHolder) {
-                        _panel.onDraw(c);
+                        if(c != null)
+                            _panel.onDraw(c);
                     }
 
                 } finally {
