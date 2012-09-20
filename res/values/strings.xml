@@ -11,7 +11,7 @@
     <string name="study_group">Study Group</string>
     <string name="group_id">Group ID</string>
     <string name="participant_id">Participant ID</string>
-    <string name="group_help">Leave the Study Group boxes blank unless you are participating in a study.</string>
+    <string name="group_help">Since you are using ohmage to collect data this field should be left blank.</string>
 	<string name="location_home">Home location</string>
 	<string name="location_work">Work location</string>
 	<string name="location_other">Other location</string>
