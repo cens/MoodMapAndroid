@@ -19,7 +19,7 @@ import java.util.UUID;
 public class MoodMapProbeWriter extends ProbeWriter {
 
     private static final String CAMPAIGN_URN = "urn:campaign:ohmage:mood_map";
-    private static final String CAMPAIGN_CREATED = "2012-08-29 16:10:15";
+    private static final String CAMPAIGN_CREATED = "2012-08-30 17:47:58";
 
     public MoodMapProbeWriter(Context context) {
         super(context);
